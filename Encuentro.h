@@ -7,6 +7,12 @@ typedef struct { int nroEncuentro;
                  int cedulaGanador;
                } Encuentro;
 
+///crea un encuentro
+void crearEncuentro(Encuentro &encuentro);
+
+///despliega por pantalla los datos del encuentro
+void desplegarEncuentro(Encuentro encuentro);
+
 ///da el numero de encuentro
 int DarNroEncuentro(Encuentro encuentro);
 
@@ -19,11 +25,6 @@ int DarCedulaParticipante2(Encuentro encuentro);
 //obtener cedula participante ganador
 int DarCedulaGanador(Encuentro encuentro);
 
-///crea un encuentro
-void crearEncuentro(Encuentro &encuentro);
-
-///despliega por pantalla los datos del encuentro
-void desplegarEncuentro(Encuentro encuentro);
 
 
 #endif // ENCUENTRO_H_INCLUDED

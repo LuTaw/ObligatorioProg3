@@ -32,14 +32,22 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Encuentro.cpp" />
 		<Unit filename="Encuentro.h" />
+		<Unit filename="Encuentros.cpp" />
 		<Unit filename="Encuentros.h" />
+		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
+		<Unit filename="Participante.cpp" />
 		<Unit filename="Participante.h" />
+		<Unit filename="Participantes.cpp" />
 		<Unit filename="Participantes.h" />
+		<Unit filename="Torneo.cpp" />
 		<Unit filename="Torneo.h" />
+		<Unit filename="boolean.cpp" />
 		<Unit filename="boolean.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="string.cpp" />
 		<Unit filename="string.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

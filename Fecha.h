@@ -8,14 +8,22 @@ typedef struct { int dia;
                } Fecha;
 
 int DarDia(Fecha fecha);
+
 int DarMes(Fecha fecha);
+
 int DarAnio(Fecha fecha);
+
 void crearFecha(Fecha &fecha);
+
 bool esValida(Fecha fecha);
+
 void desplegarFecha(Fecha fecha);
+
 boolean sonIguales(Fecha fecha1, Fecha f2);
-boolean esMayor(Fecha fecha 1, Fecha fecha2);
-boolean esMenor(Fecha fecha 1, Fecha fecha2);
+
+boolean esPosterior(Fecha fecha1, Fecha fecha2);
+
+boolean esAnterior(Fecha fecha1, Fecha fecha2);
 
 
 

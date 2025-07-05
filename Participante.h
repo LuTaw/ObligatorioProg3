@@ -10,20 +10,28 @@ typdef struct { int cedula;
                 string apellido;
                 string deptoProcedencia;
                 int cantPartidasJugadas;
-                intCantPartidasGanadas;
+                int cantPartidasGanadas;
               } Participante;
 
 int DarCedula(Participante participante);
-Fecha DarFechaNacimiento(Participante participante);
-int DarNroJugador(Participante participante);
-string DarNombre(Participante participante);
-string DarApellido(Participante participante);
-string DarDeptoProcedencia(Participante participante);
-int DarCantPartidasJugadas(Participante participante);
-int DarCantPartidasGanadas(Participante participante);
-void crearParticipante(Participante &participante);
-void desplegarParticipante(Participante participante);
 
+Fecha DarFechaNacimiento(Participante participante);
+
+int DarNroJugador(Participante participante);
+
+void DarNombre(Participante participante, string &nombre);
+
+void DarApellido(Participante participante, string &apellido);
+
+void DarDeptoProcedencia(Participante participante, string &depto);
+
+int DarCantPartidasJugadas(Participante participante);
+
+int DarCantPartidasGanadas(Participante participante);
+
+void crearParticipante(Participante &participante);
+
+void desplegarParticipante(Participante participante);
 
 
 #endif // PARTICIPANTE_H_INCLUDED
