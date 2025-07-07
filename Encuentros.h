@@ -3,9 +3,9 @@
 #include "Encuentro.h"
 #include "Participantes.h"
 
-const int CantMaximaPartidas = CantParticipantes (CantParticipantes  - 1) / 2;
+const int CantMaximaPartidas = CantParticipantes * (CantParticipantes  - 1) / 2;
 typedef struct { Encuentro encuentro[CantMaximaPartidas];
-                 tope;
+                 int tope;
                } Encuentros;
 
 // Crear:   Secuencia
@@ -24,7 +24,7 @@ int Largo(Encuentros encuentros);
 // K-ésimo: Secuencia x N -> T
 // Devuelve el elemento que ocupa la posición K de la secuencia.
 // Precondición: El largo de la secuencia es mayor o igual a K.
-Encuentro K-esimo(Encuentros encuentros, int pos);
+Encuentro Kesimo(Encuentros encuentros, int pos);
 
 //inserta el encuentro dentro del arreglo Encuentros
 void insertarEncuentroFinal(Encuentros &encuentros, Encuentro enc);

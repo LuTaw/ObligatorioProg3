@@ -1,6 +1,7 @@
 #include "Encuentro.h"
 
-void crearEncuentro(Encuentro &encuentro){
+void crearEncuentro(Encuentro &encuentro)
+{
 
 }
 

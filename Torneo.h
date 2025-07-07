@@ -2,7 +2,6 @@
 #define TORNEO_H_INCLUDED
 #include "Encuentros.h"
 
-const int CantParticipantes = 10;
 typedef int Torneo[CantParticipantes][CantParticipantes];
 
 // Crear:   Grafo
@@ -28,6 +27,6 @@ void InsertarArista(Torneo &torneo, int u, int v);
 int GradoVertice(Torneo torneo, int u);
 
 ///determina si pertenecen
-boolean pertencenMismaSubDivision(Torneo torneo, int ced1, int ced2);
+boolean pertencenMismaSubDivision(Torneo torneo, int nroJugador1, int nroJugador2);
 
 #endif // TORNEO_H_INCLUDED

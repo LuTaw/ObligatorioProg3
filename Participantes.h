@@ -37,7 +37,7 @@ void Modify(Participantes &p, Participante part);
 void desplegarParticipantes(Participantes participante);
 
 ///determina para una fecha dada, cantidad de participantes que nacieron antes, durante y luego de la misma
-void cantParticipantesSegunFecha(Participantes participantes,Fecha f1, int cantIgual&, int &cantMenor, int &cantMayor);
+void cantParticipantesSegunFecha(Participantes participantes,Fecha f1, int &cantIgual, int &cantMenor, int &cantMayor);
 
 /// determina cantidad de encuentros ganados por jugador
 void desplegarJugadoresGanadores(Participantes participantes);
