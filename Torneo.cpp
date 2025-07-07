@@ -62,7 +62,7 @@ int GradoVertice(Torneo torneo, int u)
     return grado;
 }
 
-DFSMismaSubDivision(Torneo torneo, int actual, boolean visitado[CantParticipantes], int nroJugador2)
+void DFSMismaSubDivision(Torneo torneo, int actual, boolean visitado[CantParticipantes], int nroJugador2)
 {
     visitado[actual] = TRUE;
     int i = 0;

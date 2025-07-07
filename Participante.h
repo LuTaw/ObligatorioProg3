@@ -29,7 +29,7 @@ int DarCantPartidasJugadas(Participante participante);
 
 int DarCantPartidasGanadas(Participante participante);
 
-void crearParticipante(Participante &participante);
+void crearParticipante(Participante &participante, int nroJugador);
 
 void desplegarParticipante(Participante participante);
 

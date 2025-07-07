@@ -7,7 +7,7 @@ typedef struct nodoP { Participante participante;
                      } nodoParticipante;
 typedef nodoParticipante * ListaParticipante;
 
-const int CantParticipantes = 10;
+const int CantParticipantes = 4;
 typedef ListaParticipante Participantes[CantParticipantes];
 
 // Make:   Diccionario
@@ -26,7 +26,7 @@ void Insert(Participantes &p, Participante part);
 // Find : Diccionario x K  T
 // Dada la clave de un elemento devuelve el elemento con dicha clave
 // Precondición: el elemento es miembro del diccionario.
-Participante Find(Participantes &p, int ced);
+Participante Find(Participantes p, int ced);
 
 // Modifiy : Diccionario x T
 // Diccionario Sustituye el viejo elemento de tipo T en el diccionario por el nuevo elemento.

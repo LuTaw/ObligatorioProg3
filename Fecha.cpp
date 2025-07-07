@@ -35,7 +35,7 @@ boolean validarFecha(Fecha fecha)
         valida = FALSE;
     if (DarDia(fecha) < 1 || DarDia(fecha) > 31)
         valida = FALSE;
-    if (DarAnio(fecha) > 2010 || DarAnio(fecha) > 1930)
+    if (DarAnio(fecha) > 2010 || DarAnio(fecha) < 1930)
         valida = FALSE;
 
     return valida;

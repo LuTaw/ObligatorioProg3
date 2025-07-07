@@ -53,12 +53,11 @@ string DarDeptoProcedencia(Participante participante)
 }
 
 
-void crearParticipante(Participante &participante){
+void crearParticipante(Participante &participante, int nroJugador){
     printf("\n Ingrese su numero de cedula: ");
     scanf("%d", &participante.cedula);
     printf("\n Ingrese su fecha de nacimiento: ");
     crearFecha(participante.fechaNacimiento);
-    //nro de jug
     strcrear(participante.nombre);
     printf("\n Ingrese el nombre: ");
     scan(participante.nombre);
@@ -68,21 +67,19 @@ void crearParticipante(Participante &participante){
     printf("\n Ingrese departamento de procedencia: ");
     strcrear(participante.deptoProcedencia);
     scan(participante.deptoProcedencia);
-    //cant partidas
-
+    participante.cantPartidasGanadas = 0;
+    participante.cantPartidasJugadas = 0;
+    participante.nroJugador = 0;
 }
 
 void desplegarParticipante(Participante participante){
-    printf("\n Cedula: %ld ", DarCedula(participante));
+    printf("\n Cedula: %d ", DarCedula(participante));
     printf("\n Fecha de Nacimiento: ");
     desplegarFecha(DarFechaNacimiento(participante));
-    printf("\n Numero de jugador: "); /// ver
-    printf("\n Nombre: ");
-    print(DarNombre(participante));
-    printf("\n Apellido: ");
-    print(DarApellido(participante));
-    printf("\n Departamento: ");
-    print(DarDeptoProcedencia(participante));
+    printf("\n Numero de jugador: %d", DarNroJugador(participante));
+    printf("\n Nombre: %d", DarNombre(participante));
+    printf("\n Apellido: %d", DarApellido(participante));
+    printf("\n Departamento: %d", DarDeptoProcedencia(participante));
     printf("\n Partidas Jugadas: %d", DarCantPartidasJugadas(participante));
     printf("\n Partidas Ganadas: %d", DarCantPartidasGanadas(participante));
 }
