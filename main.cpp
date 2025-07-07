@@ -33,15 +33,15 @@ void desplegarMenuPrincipal()
 
 void desplegarSegundoMenu()
 {
-    printf("Seleccione la opcion deseada: \n\n");
+    printf("\n\n Seleccione la opcion deseada: \n\n");
     for(int i = 0; i < SEGUNDO_MENU_SIZE; i++) {
         std::cout << SEGUNDO_MENU_ITEMS[i] << ". " << SEGUNDO_MENU_NAMES[i] << "\n";
     }
 }
 
-void desplegarJugadoresRegistrados(Torneo torneo)
+void desplegarJugadoresRegistrados(Participantes participantes)
 {
-    printf("Proximamente a implementar....");
+    desplegarParticipantes(participantes);
 }
 
 void desplegarJugador(Torneo torneo)
@@ -78,7 +78,7 @@ void procesarValorSegundoMenu(int opcionIngresada, Torneo &torneo, Participantes
 {
     switch (opcionIngresada) {
         case 1:
-            desplegarJugadoresRegistrados(torneo);
+            desplegarJugadoresRegistrados(participantes);
             break;
         case 2:
             desplegarJugador(torneo);

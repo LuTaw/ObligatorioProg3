@@ -69,18 +69,18 @@ void crearParticipante(Participante &participante, int nroJugador){
     scan(participante.deptoProcedencia);
     participante.cantPartidasGanadas = 0;
     participante.cantPartidasJugadas = 0;
-    participante.nroJugador = 0;
+    participante.nroJugador = nroJugador;
 }
 
 void desplegarParticipante(Participante participante){
+    printf("\n Participante con numero de jugador: %d", DarNroJugador(participante));
     printf("\n Cedula: %d ", DarCedula(participante));
     printf("\n Fecha de Nacimiento: ");
     desplegarFecha(DarFechaNacimiento(participante));
-    printf("\n Numero de jugador: %d", DarNroJugador(participante));
     printf("\n Nombre: %d", DarNombre(participante));
     printf("\n Apellido: %d", DarApellido(participante));
     printf("\n Departamento: %d", DarDeptoProcedencia(participante));
     printf("\n Partidas Jugadas: %d", DarCantPartidasJugadas(participante));
-    printf("\n Partidas Ganadas: %d", DarCantPartidasGanadas(participante));
+    printf("\n Partidas Ganadas: %d \n\n", DarCantPartidasGanadas(participante));
 }
 
