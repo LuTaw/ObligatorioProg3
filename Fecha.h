@@ -15,7 +15,7 @@ int DarAnio(Fecha fecha);
 
 void crearFecha(Fecha &fecha);
 
-bool esValida(Fecha fecha);
+boolean validarFecha(Fecha fecha);
 
 void desplegarFecha(Fecha fecha);
 

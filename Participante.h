@@ -3,7 +3,7 @@
 #include "Fecha.h"
 #include "string.h"
 
-typdef struct { int cedula;
+typedef struct { int cedula;
                 Fecha fechaNacimiento;
                 int nroJugador;
                 string nombre;
@@ -19,11 +19,11 @@ Fecha DarFechaNacimiento(Participante participante);
 
 int DarNroJugador(Participante participante);
 
-void DarNombre(Participante participante, string &nombre);
+string DarNombre(Participante participante);
 
-void DarApellido(Participante participante, string &apellido);
+string DarApellido(Participante participante);
 
-void DarDeptoProcedencia(Participante participante, string &depto);
+string DarDeptoProcedencia(Participante participante);
 
 int DarCantPartidasJugadas(Participante participante);
 

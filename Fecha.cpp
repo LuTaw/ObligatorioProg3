@@ -1,18 +1,22 @@
 #include "Fecha.h"
 
-int DarDia(Fecha fecha){
+int DarDia(Fecha fecha)
+{
     return fecha.dia;
 }
 
-int DarMes(Fecha fecha){
+int DarMes(Fecha fecha)
+{
     return fecha.mes;
 }
 
-int DarAnio(Fecha fecha){
+int DarAnio(Fecha fecha)
+{
     return fecha.anio;
 }
 
-void crearFecha(Fecha &fecha){
+void crearFecha(Fecha &fecha)
+{
     boolean esValida = FALSE;
     do{
         printf("\n Ingrese dia/mes/anio: ");
@@ -24,44 +28,58 @@ void crearFecha(Fecha &fecha){
     } while (!esValida);
 }
 
-boolean esValida(Fecha fecha){
-    if (f.mes < 1 || f.mes > 12)
-        return FALSE;
-    if (f.dia < 1 || f.dia > 31)
-        return FALSE;
+boolean validarFecha(Fecha fecha)
+{
+    boolean valida = TRUE;
+    if (DarMes(fecha) < 1 || DarMes(fecha) > 12)
+        valida = FALSE;
+    if (DarDia(fecha) < 1 || DarDia(fecha) > 31)
+        valida = FALSE;
+    if (DarAnio(fecha) > 2010 || DarAnio(fecha) > 1930)
+        valida = FALSE;
+
+    return valida;
 }
 
-void desplegarFecha(Fecha fecha){
-    printf("\n %d %d %d", f.dia,f.mes,f.anio);
+void desplegarFecha(Fecha fecha)
+{
+    printf("\n %d/%d/%d", DarDia(fecha),DarMes(fecha),DarAnio(fecha));
 }
 
-boolean sonIguales(Fecha fecha1, Fecha fecha2){
-    if(darDia(fecha1) == darDia(fecha2)  && darMes(fecha1) == darMes(fecha2) && darAnio(fecha1) == darAnio(fecha2))
+boolean sonIguales(Fecha fecha1, Fecha fecha2)
+{
+    if(DarDia(fecha1) == DarDia(fecha2)
+       && DarMes(fecha1) == DarMes(fecha2)
+       && DarAnio(fecha1) == DarAnio(fecha2))
         return TRUE;
     else
         return FALSE;
 }
 
 boolean esPosterior(Fecha fecha1, Fecha fecha2){
-    if (darAnio(fecha1) >= darAnio(s2))
-        return TRUE;
-    else if (darAnio(fecha1) == darAnio(fecha2) && darMes(fecha1) >= darMes(fecha2))
-        return TRUE;
-    else if (darAnio(fecha1) == darAnio(fecha2) && darMes(fecha1) == darMes(fecha2) && darDia(fecha1) >= darDia(fecha2))
-        return TRUE;
-    else
-        return FALSE;
+    boolean es = FALSE;
+    if (DarAnio(fecha1) >= DarAnio(fecha2))
+        es = TRUE;
+    else if (DarAnio(fecha1) == DarAnio(fecha2)) {
+        if (DarMes(fecha1) >= DarMes(fecha2))
+            es = TRUE;
+        else if (DarMes(fecha1) == DarMes(fecha2) && DarDia(fecha1) >= DarDia(fecha2))
+            es = TRUE;
+    }
+
+    return es;
 }
 
 boolean esAnterior(Fecha fecha1, Fecha fecha2){
-    if (darAnio(fecha1) <= darAnio(fecha2))
-        return TRUE;
-    else if (darAnio(fecha1) == darAnio(fecha2) && darMes(fecha1) <= darMes(fecha2))
-        return TRUE;
-    else if (darAnio(fecha1) == darAnio(fecha2) && darMes(fecha1) == darMes(fecha2) && darDia(fecha1) <= darDia(fecha2))
-        return TRUE;
-    else
-        return FALSE;
+    boolean es = FALSE;
+    if (DarAnio(fecha1) <= DarAnio(fecha2))
+        es = TRUE;
+    else if (DarAnio(fecha1) == DarAnio(fecha2)) {
+        if (DarMes(fecha1) <= DarMes(fecha2))
+            es = TRUE;
+        else if (DarMes(fecha1) == DarMes(fecha2) && DarDia(fecha1) <= DarDia(fecha2))
+            es = TRUE;
+    }
+
+    return es;
 }
-
-
