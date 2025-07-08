@@ -76,14 +76,14 @@ void registrarEncuentro(Torneo &torneo, Participantes &participantes, Encuentros
                     Modify(participantes, participante1);
                     Modify(participantes, participante2);
                 } else {
-                    printf("Los jugadores seleccionados ya jugaron una partida entre ellos, deben ser jugadores que no hayan jugado una partida aun.");
+                    printf("Los jugadores seleccionados ya jugaron una partida entre ellos, deben ser jugadores que no hayan jugado una partida aun. \n\n\n");
                 }
             }
             else
-                printf("Debe seleccionar participantes diferentes.");
+                printf("Debe seleccionar participantes diferentes. \n\n\n");
         }
     } else {
-        printf("El torneo ha finalizado, por lo que no se pueden ingresar mas encuentros. \n\n\n")
+        printf("El torneo ha finalizado, por lo que no se pueden ingresar mas encuentros. \n\n\n");
     }
 }
 
@@ -97,14 +97,32 @@ void cantParticipantesSegunFecha(Torneo torneo)
     printf("Proximamente a implementar....");
 }
 
-void determinarMismaSubDivision(Torneo torneo)
+void determinarMismaSubDivision(Torneo torneo, Participantes participantes)
 {
-    printf("Proximamente a implementar....");
+    boolean selecciono  = FALSE;
+    while(!selecciono) {
+        Participante participante1 = Find(participantes, seleccionarParticipante(participantes));
+        Participante participante2 = Find(participantes, seleccionarParticipante(participantes));
+        if (DarCedula(participante1) != DarCedula(participante2)) {
+            selecciono = TRUE;
+            boolean pertenecen = pertencenMismaSubDivision(torneo, DarNroJugador(participante1), DarNroJugador(participante2));
+            if(pertenecen)
+                printf("Los jugadores seleccionadas pertenecen a la misma subdivision. \n\n\n");
+            else
+                printf("Los jugadores seleccionadas NO pertenecen a la misma subdivision. \n\n\n");
+        } else {
+            printf("Debe seleccionar participantes diferentes. \n\n");
+        }
+    }
 }
 
-void obtenerGanador(Torneo torneo)
+void obtenerGanador(Torneo torneo, Participantes participantes, Encuentros encuentros)
 {
-    printf("Proximamente a implementar....");
+    if (torneoTerminado(encuentros)) {
+        desplegarJugadoresGanadores(participantes);
+    } else {
+        printf("El torneo aun no ha finalizado por lo que no se pueden determinar aun los ganadores del torneo. \n\n\n");
+    }
 }
 
 void procesarValorSegundoMenu(int opcionIngresada, Torneo &torneo, Participantes &participantes, Encuentros &encuentros)
@@ -126,10 +144,10 @@ void procesarValorSegundoMenu(int opcionIngresada, Torneo &torneo, Participantes
             cantParticipantesSegunFecha(torneo);
             break;
         case 6:
-            determinarMismaSubDivision(torneo);
+            determinarMismaSubDivision(torneo, participantes);
             break;
         case 7:
-            obtenerGanador(torneo);
+            obtenerGanador(torneo, participantes, encuentros);
             break;
         case 8:
             break;
