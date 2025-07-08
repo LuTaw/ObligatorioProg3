@@ -111,7 +111,7 @@ void Modify(Participantes &p, Participante part)
 
 void DesplegarParticipantesEnLista(ListaParticipante lista)
 {
-    while(lista != nullptr) {
+    while(lista != NULL) {
         desplegarParticipante(lista->participante);
         lista = lista->sig;
     }
@@ -127,7 +127,7 @@ void desplegarParticipantes(Participantes participantes)
 
 void cantParticipantesSegunFechaEnLista(ListaParticipante lista, Fecha fecha, int &cantIgual, int &cantMenor, int &cantMayor)
 {
-    while(lista != nullptr) {
+    while(lista != NULL) {
         Fecha fechaParticipante = DarFechaNacimiento(lista->participante);
         if(sonIguales(fechaParticipante, fecha))
             cantIgual++;
@@ -156,7 +156,7 @@ void desplegarJugadoresGanadores(Participantes participantes)
     // Primera pasada: para encontrar el máximo de partidas ganadas entre todos los participantes
     for (int i = 0; i < CantParticipantes; ++i) {
         ListaParticipante actual = participantes[i];
-        while (actual != nullptr) {
+        while (actual != NULL) {
             if (DarCantPartidasGanadas(actual->participante) > maxGanadas) {
                 maxGanadas = DarCantPartidasGanadas(actual->participante);
             }
@@ -169,7 +169,7 @@ void desplegarJugadoresGanadores(Participantes participantes)
 
     for (int i = 0; i < CantParticipantes; ++i) {
         ListaParticipante actual = participantes[i];
-        while (actual != nullptr) {
+        while (actual != NULL) {
             if (DarCantPartidasGanadas(actual->participante) == maxGanadas) {
                 desplegarParticipante(actual->participante);
             }
@@ -192,6 +192,5 @@ int seleccionarParticipante(Participantes participantes)
             selecciono = TRUE;
         }
     }
-
     return cedulaParticipante;
 }

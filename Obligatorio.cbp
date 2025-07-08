@@ -47,6 +47,8 @@
 		<Unit filename="boolean.cpp" />
 		<Unit filename="boolean.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menu.cpp" />
+		<Unit filename="menu.h" />
 		<Unit filename="string.cpp" />
 		<Unit filename="string.h" />
 		<Extensions>
