@@ -42,4 +42,6 @@ void cantParticipantesSegunFecha(Participantes participantes,Fecha f1, int &cant
 /// determina cantidad de encuentros ganados por jugador
 void desplegarJugadoresGanadores(Participantes participantes);
 
+int seleccionarParticipante(Participantes participantes);
+
 #endif // PARTICIPANTES_H_INCLUDED

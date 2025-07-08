@@ -177,3 +177,20 @@ void desplegarJugadoresGanadores(Participantes participantes)
         }
     }
 }
+
+int seleccionarParticipante(Participantes participantes)
+{
+    boolean selecciono = FALSE;
+    int cedulaParticipante;
+    while (!selecciono) {
+        printf("Ingrese la cedula de un participante: \n");
+        scanf("%d", &cedulaParticipante);
+        if (!Member(participantes, cedulaParticipante)) {
+            printf("La cedula no es correcta. \n\n");
+        } else {
+            selecciono = TRUE;
+        }
+    }
+
+    return cedulaParticipante;
+}

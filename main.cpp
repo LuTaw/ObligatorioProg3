@@ -44,14 +44,47 @@ void desplegarJugadoresRegistrados(Participantes participantes)
     desplegarParticipantes(participantes);
 }
 
-void desplegarJugador(Torneo torneo)
+void desplegarJugador(Participantes participantes)
 {
     printf("Proximamente a implementar....");
 }
 
-void registrarEncuentro(Torneo &torneo, Participantes &participantes)
+void registrarEncuentro(Torneo &torneo, Participantes &participantes, Encuentros &encuentros)
 {
-    printf("Proximamente a implementar....");
+    if (!torneoTerminado(encuentros)) {
+        boolean selecciono  = FALSE;
+        while(!selecciono) {
+            Participante participante1 = Find(participantes, seleccionarParticipante(participantes));
+            Participante participante2 = Find(participantes, seleccionarParticipante(participantes));
+            if (DarCedula(participante1) != DarCedula(participante2)) {
+                int nroJugador1 = DarNroJugador(participante1);
+                int nroJugador2 = DarNroJugador(participante2);
+                if(!PerteneceArista(torneo, nroJugador1, nroJugador2)) {
+                    selecciono = TRUE;
+                    InsertarArista(torneo, nroJugador1, nroJugador2);
+                    int nuevoIdEncuentro = Largo(encuentros) + 1;
+                    Encuentro encuentro = crearEncuentro(nuevoIdEncuentro, DarCedula(participante1), DarCedula(participante2));
+                    insertarEncuentroFinal(encuentros, encuentro);
+                    int cedulaGanador = DarCedulaGanador(encuentro);
+                    if (cedulaGanador == DarCedula(participante1)) {
+                        IncrementarCantPartidasGanadas(participante1);
+                    } else {
+                        IncrementarCantPartidasGanadas(participante2);
+                    }
+                    IncrementarCantPartidasJugadas(participante1);
+                    IncrementarCantPartidasJugadas(participante2);
+                    Modify(participantes, participante1);
+                    Modify(participantes, participante2);
+                } else {
+                    printf("Los jugadores seleccionados ya jugaron una partida entre ellos, deben ser jugadores que no hayan jugado una partida aun.");
+                }
+            }
+            else
+                printf("Debe seleccionar participantes diferentes.");
+        }
+    } else {
+        printf("El torneo ha finalizado, por lo que no se pueden ingresar mas encuentros. \n\n\n")
+    }
 }
 
 void desplegarTodasPartidasAscendente(Torneo torneo)
@@ -74,17 +107,17 @@ void obtenerGanador(Torneo torneo)
     printf("Proximamente a implementar....");
 }
 
-void procesarValorSegundoMenu(int opcionIngresada, Torneo &torneo, Participantes &participantes)
+void procesarValorSegundoMenu(int opcionIngresada, Torneo &torneo, Participantes &participantes, Encuentros &encuentros)
 {
     switch (opcionIngresada) {
         case 1:
             desplegarJugadoresRegistrados(participantes);
             break;
         case 2:
-            desplegarJugador(torneo);
+            desplegarJugador(participantes);
             break;
         case 3:
-            registrarEncuentro(torneo, participantes);
+            registrarEncuentro(torneo, participantes, encuentros);
             break;
         case 4:
             desplegarTodasPartidasAscendente(torneo);
@@ -110,11 +143,13 @@ void segundoMenu(Torneo &torneo, Participantes &participantes)
 {
     int opcionIngresada;
     boolean salirSegundoMenu = FALSE;
+    Encuentros encuentros;
+    CrearEncuentros(encuentros);
 
     while(!salirSegundoMenu) {
         desplegarSegundoMenu();
         scanf("%d", &opcionIngresada);
-        procesarValorSegundoMenu(opcionIngresada, torneo, participantes);
+        procesarValorSegundoMenu(opcionIngresada, torneo, participantes, encuentros);
 
         if (opcionIngresada == 8)
             salirSegundoMenu = TRUE;

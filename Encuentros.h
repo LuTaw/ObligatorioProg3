@@ -1,5 +1,6 @@
 #ifndef ENCUENTROS_H_INCLUDED
 #define ENCUENTROS_H_INCLUDED
+
 #include "Encuentro.h"
 #include "Participantes.h"
 

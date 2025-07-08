@@ -84,3 +84,13 @@ void desplegarParticipante(Participante participante){
     printf("\n Partidas Ganadas: %d \n\n", DarCantPartidasGanadas(participante));
 }
 
+void IncrementarCantPartidasGanadas(Participante &participante)
+{
+    participante.cantPartidasGanadas++;
+}
+
+void IncrementarCantPartidasJugadas(Participante &participante)
+{
+    participante.cantPartidasJugadas++;
+}
+

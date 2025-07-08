@@ -33,5 +33,8 @@ void crearParticipante(Participante &participante, int nroJugador);
 
 void desplegarParticipante(Participante participante);
 
+void IncrementarCantPartidasGanadas(Participante &participante);
+
+void IncrementarCantPartidasJugadas(Participante &participante);
 
 #endif // PARTICIPANTE_H_INCLUDED
