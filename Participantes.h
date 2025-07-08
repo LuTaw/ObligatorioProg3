@@ -42,6 +42,7 @@ void cantParticipantesSegunFecha(Participantes participantes,Fecha f1, int &cant
 /// determina cantidad de encuentros ganados por jugador
 void desplegarJugadoresGanadores(Participantes participantes);
 
+// permite al usuario seleccionar una cedula por consola
 int seleccionarParticipante(Participantes participantes);
 
 #endif // PARTICIPANTES_H_INCLUDED

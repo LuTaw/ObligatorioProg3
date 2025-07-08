@@ -178,6 +178,7 @@ void desplegarJugadoresGanadores(Participantes participantes)
     }
 }
 
+// permite al usuario seleccionar una cedula por consola
 int seleccionarParticipante(Participantes participantes)
 {
     boolean selecciono = FALSE;

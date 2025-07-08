@@ -33,8 +33,10 @@ void crearParticipante(Participante &participante, int nroJugador);
 
 void desplegarParticipante(Participante participante);
 
+// incrementa en uno la cantidad de partidas ganadas para un participante.
 void IncrementarCantPartidasGanadas(Participante &participante);
 
+// incrementa en uno la cantidad de partidas jugadas para un participante.
 void IncrementarCantPartidasJugadas(Participante &participante);
 
 #endif // PARTICIPANTE_H_INCLUDED
