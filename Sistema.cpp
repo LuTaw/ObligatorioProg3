@@ -114,7 +114,7 @@ void desplegarJugadoresRegistrados(Participantes participantes)
 
 void desplegarJugador(Participantes participantes)
 {
-    seleccionarParticipant
+
 }
 
 void desplegarTodasPartidasAscendente(Encuentros encuentros)
@@ -126,7 +126,7 @@ void desplegarTodasPartidasAscendente(Encuentros encuentros)
 }
 
 
-void cantParticipantesSegunFecha(Participantes participantes)
+void cantParticipantesDadoFecha(Participantes participantes)
 {
     boolean ok = FALSE;
     while(!ok){
@@ -136,13 +136,13 @@ void cantParticipantesSegunFecha(Participantes participantes)
         if(validarFecha(fecha)){
             ok = TRUE;
             int cantIgual = 0, cantMenor = 0, cantMayor = 0;
-            cantParticipantesSegunFechaEnLista(participantes,fecha,cantIgual,cantMenor,cantMayor);
+            cantParticipantesSegunFecha(participantes,fecha,cantIgual,cantMenor,cantMayor);
             printf(" Participantes nacidos en la fecha: %d",cantIgual);
             printf(" Participantes nacidos antes de la fecha: %d",cantMenor);
             printf(" Participantes nacidos despues de la fecha: %d",cantMayor);
         }
         else{
-            print(" Ingrese una fecha valida. ");
+            printf(" Ingrese una fecha valida. ");
         }
     }
 }

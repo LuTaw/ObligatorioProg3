@@ -8,7 +8,7 @@ void desplegarJugadoresRegistrados(Participantes participantes);
 void desplegarJugador(Participantes participantes);
 void registrarEncuentro(Torneo &torneo, Participantes &participantes, Encuentros &encuentros);
 void desplegarTodasPartidasAscendente(Encuentros encuentros);
-void cantParticipantesSegunFecha(Torneo torneo);
+void cantParticipantesDadoFecha(Participantes participantes);
 void determinarMismaSubDivision(Torneo torneo, Participantes participantes);
 void obtenerGanador(Torneo torneo, Participantes participantes, Encuentros encuentros);
 
