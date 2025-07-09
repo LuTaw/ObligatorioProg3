@@ -15,22 +15,12 @@ int DarNroJugador(Participante participante)
     return participante.nroJugador;
 }
 
-string DarNombre(Participante participante)
-{
-    string nombre;
-    strcrear(nombre);
-    strcop(nombre, participante.nombre);
-
-    return nombre;
+void DarNombre(Participante participante,string &nombre){
+    return strcop(nombre, participante.nombre);
 }
 
-string DarApellido(Participante participante)
-{
-    string apellido;
-    strcrear(apellido);
-    strcop(apellido, participante.apellido);
-
-    return apellido;
+void DarApellido(Participante participante,string &apellido){
+    return strcop(apellido, participante.apellido);
 }
 
 int DarCantPartidasJugadas(Participante participante)
@@ -43,15 +33,9 @@ int DarCantPartidasGanadas(Participante participante)
     return participante.cantPartidasGanadas;
 }
 
-string DarDeptoProcedencia(Participante participante)
-{
-    string depto;
-    strcrear(depto);
-    strcop(depto, participante.deptoProcedencia);
-
-    return depto;
+void DarDeptoProcedencia(Participante participante,string &depto){
+    return strcop(depto, participante.deptoProcedencia);
 }
-
 
 void crearParticipante(Participante &participante, int nroJugador){
     printf("\n Ingrese su numero de cedula: ");
@@ -77,9 +61,12 @@ void desplegarParticipante(Participante participante){
     printf("\n Cedula: %d ", DarCedula(participante));
     printf("\n Fecha de Nacimiento: ");
     desplegarFecha(DarFechaNacimiento(participante));
-    printf("\n Nombre: %d", DarNombre(participante));
-    printf("\n Apellido: %d", DarApellido(participante));
-    printf("\n Departamento: %d", DarDeptoProcedencia(participante));
+    printf("\n Nombre: ");
+    print(DarNombre(participante));
+    printf("\n Apellido: ");
+    print(DarApellido(participante));
+    printf("\n Departamento: ");
+    print(DarDeptoProcedencia(participante));
     printf("\n Partidas Jugadas: %d", DarCantPartidasJugadas(participante));
     printf("\n Partidas Ganadas: %d \n\n", DarCantPartidasGanadas(participante));
 }

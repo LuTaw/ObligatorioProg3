@@ -19,11 +19,11 @@ Fecha DarFechaNacimiento(Participante participante);
 
 int DarNroJugador(Participante participante);
 
-string DarNombre(Participante participante);
+void DarNombre(Participante participante,string &nombre);
 
-string DarApellido(Participante participante);
+void DarApellido(Participante participante,string &apellido);
 
-string DarDeptoProcedencia(Participante participante);
+void DarDeptoProcedencia(Participante participante,string &depto);
 
 int DarCantPartidasJugadas(Participante participante);
 
