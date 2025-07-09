@@ -179,7 +179,7 @@ void desplegarJugadoresGanadores(Participantes participantes)
 }
 
 // permite al usuario seleccionar una cedula por consola
-int seleccionarParticipante(Participantes participantes)
+int seleccionarParticipante(Participantes participantes) // convertir a void y entero por referencia, dar la opcion de cancelar
 {
     boolean selecciono = FALSE;
     int cedulaParticipante;

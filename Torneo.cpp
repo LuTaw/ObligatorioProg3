@@ -14,16 +14,11 @@ void CrearTorneo(Torneo &torneo)
 
 // PerteneceVertice : Grafo x V  Boolean
 // Determina si en el grafo existe el vértice especificado.
-boolean PerteneceVertice(Torneo torneo, int v)
+boolean PerteneceVertice(Torneo torneo, int v)  // se puede comparar directamente con CantParticpantes porque es fijo
 {
     boolean encontro = FALSE;
-    int i = 0;
-    while(!encontro && i < CantParticipantes) {
-        if (i == v)
-            encontro = TRUE;
-        else
-            i++;
-    }
+    if (CantParticipantes > v)
+        encontro = TRUE;
 
     return encontro;
 }
