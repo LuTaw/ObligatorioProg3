@@ -182,6 +182,7 @@ void desplegarJugadoresGanadores(Participantes participantes)
 void seleccionarParticipante(Participantes participantes, int &cedulaParticipante, boolean &deseaContinuar) // convertir a void y entero por referencia, dar la opcion de cancelar
 {
     boolean selecciono = FALSE;
+    int resultado, valorContinuar;
     while (!selecciono && deseaContinuar) {
         printf("Ingrese la cedula de un participante: \n");
         scanf("%d", &cedulaParticipante);
@@ -190,5 +191,13 @@ void seleccionarParticipante(Participantes participantes, int &cedulaParticipant
         } else {
             selecciono = TRUE;
         }
+        printf("Desea continuar seleccionando participante? Ingrese 0 por No y 1 por Si. \n");
+        resultado = scanf("%d", &valorContinuar);
+        while(resultado != 1 || (valorContinuar != 0 && valorContinuar !=1)) {
+            printf("Entrada invalida. Ingrese 0 por No y 1 por Si. \n ");
+            resultado = scanf("%d", &valorContinuar);
+        }
+        if (valorContinuar == 0)
+            deseaContinuar = FALSE;
     }
 }

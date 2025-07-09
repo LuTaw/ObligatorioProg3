@@ -117,9 +117,12 @@ void desplegarJugador(Participantes participantes)
     printf("Proximamente a implementar....");
 }
 
-void desplegarTodasPartidasAscendente(Torneo torneo)
+void desplegarTodasPartidasAscendente(Encuentros encuentros)
 {
-    printf("Proximamente a implementar....");
+    if(!EsVacia(encuentros))
+        desplegarEncuentros(encuentros);
+    else
+        printf("\n\n Aun no hay ningun encuentro registrado en el sistema.");
 }
 
 void cantParticipantesSegunFecha(Torneo torneo)

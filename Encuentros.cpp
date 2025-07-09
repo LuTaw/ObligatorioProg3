@@ -44,10 +44,11 @@ void insertarEncuentroFinal(Encuentros &encuentros, Encuentro enc)
     }
 }
 
-//despliega por pantalla todos los encuentros
+// despliega por pantalla todos los encuentros
 void desplegarEncuentros(Encuentros encuentros)
 {
-    for(int i = 0; i < CantMaximaPartidas; i++) {
+    int i = 0;
+    while(i < Largo(encuentros)) {
         desplegarEncuentro(encuentros.encuentro[i]);
     }
 }
