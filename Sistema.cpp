@@ -142,7 +142,7 @@ void cantParticipantesSegunFecha(Participantes participantes)
             printf(" Participantes nacidos despues de la fecha: %d",cantMayor);
         }
         else{
-            print("Ingrese una fecha valida. ");
+            print(" Ingrese una fecha valida. ");
         }
     }
 }
