@@ -124,7 +124,7 @@ void desplegarJugador(Participantes participantes)
             desplegarParticipante(p);
             existe = TRUE;
         } else {
-            printf("No existe participante con esa cedula. ");
+            printf(" No existe participante con esa cedula. ");
         }
     }
 }
