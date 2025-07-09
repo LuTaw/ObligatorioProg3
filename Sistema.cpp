@@ -114,15 +114,42 @@ void desplegarJugadoresRegistrados(Participantes participantes)
 
 void desplegarJugador(Participantes participantes)
 {
-    printf("Proximamente a implementar....");
+    boolean existe = FALSE;
+    while(!existe){
+        int ced;
+        printf(" Ingrese la cedula del jugador: ");
+        scanf("%d", &ced);
+        if(Member(participantes,ced)){
+            Participante p = Find(participantes, ced);
+            desplegarParticipante(p);
+            existe = TRUE;
+        } else {
+            printf("No existe participante con esa cedula");
+        }
+    }
 }
 
-void desplegarTodasPartidasAscendente(Torneo torneo)
+void desplegarTodasPartidasAscendente(Encuentros encuentros)
 {
-    printf("Proximamente a implementar....");
+    if(!EsVacia(encuentros))
+        desplegarEncuentros(encuentros);
+    else
+        printf("\n\n Aun no hay ningun encuentro registrado en el sistema.");
 }
 
-void cantParticipantesSegunFecha(Torneo torneo)
+/*
+void cantParticipantesSegunFecha(Participantes participantes)
 {
-    printf("Proximamente a implementar....");
+    boolean ok = FALSE;
+    while(!ok){
+        Fecha fecha;
+        printf(" Ingrese una fecha valida: ");
+        crearFecha(fecha);
+        if(validarFecha(fecha)){
+
+
+        }
+    }
 }
+}
+*/
