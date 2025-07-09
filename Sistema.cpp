@@ -114,19 +114,7 @@ void desplegarJugadoresRegistrados(Participantes participantes)
 
 void desplegarJugador(Participantes participantes)
 {
-    boolean existe = FALSE;
-    while(!existe){
-        int ced;
-        printf(" Ingrese la cedula del jugador: ");
-        scanf("%d", &ced);
-        if(Member(participantes,ced)){
-            Participante p = Find(participantes, ced);
-            desplegarParticipante(p);
-            existe = TRUE;
-        } else {
-            printf(" No existe participante con esa cedula. ");
-        }
-    }
+    seleccionarParticipant
 }
 
 void desplegarTodasPartidasAscendente(Encuentros encuentros)
@@ -137,7 +125,7 @@ void desplegarTodasPartidasAscendente(Encuentros encuentros)
         printf("\n\n Aun no hay ningun encuentro registrado en el sistema.");
 }
 
-/*
+
 void cantParticipantesSegunFecha(Participantes participantes)
 {
     boolean ok = FALSE;
@@ -146,10 +134,17 @@ void cantParticipantesSegunFecha(Participantes participantes)
         printf(" Ingrese una fecha valida: ");
         crearFecha(fecha);
         if(validarFecha(fecha)){
-
-
+            ok = TRUE;
+            int cantIgual = 0, cantMenor = 0, cantMayor = 0;
+            cantParticipantesSegunFechaEnLista(participantes,fecha,cantIgual,cantMenor,cantMayor);
+            printf(" Participantes nacidos en la fecha: %d",cantIgual);
+            printf(" Participantes nacidos antes de la fecha: %d",cantMenor);
+            printf(" Participantes nacidos despues de la fecha: %d",cantMayor);
+        }
+        else{
+            print("Ingrese una fecha valida. ");
         }
     }
 }
-}
-*/
+
+
