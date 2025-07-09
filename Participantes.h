@@ -43,6 +43,6 @@ void cantParticipantesSegunFecha(Participantes participantes,Fecha f1, int &cant
 void desplegarJugadoresGanadores(Participantes participantes);
 
 // permite al usuario seleccionar una cedula por consola
-int seleccionarParticipante(Participantes participantes);
+void seleccionarParticipante(Participantes participantes, int &cedulaParticipante, boolean &deseaContinuar);
 
 #endif // PARTICIPANTES_H_INCLUDED

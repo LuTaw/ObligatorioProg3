@@ -42,6 +42,8 @@
 		<Unit filename="Participante.h" />
 		<Unit filename="Participantes.cpp" />
 		<Unit filename="Participantes.h" />
+		<Unit filename="Sistema.cpp" />
+		<Unit filename="Sistema.h" />
 		<Unit filename="Torneo.cpp" />
 		<Unit filename="Torneo.h" />
 		<Unit filename="boolean.cpp" />

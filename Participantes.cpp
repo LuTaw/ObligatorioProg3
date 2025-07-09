@@ -179,11 +179,10 @@ void desplegarJugadoresGanadores(Participantes participantes)
 }
 
 // permite al usuario seleccionar una cedula por consola
-int seleccionarParticipante(Participantes participantes) // convertir a void y entero por referencia, dar la opcion de cancelar
+void seleccionarParticipante(Participantes participantes, int &cedulaParticipante, boolean &deseaContinuar) // convertir a void y entero por referencia, dar la opcion de cancelar
 {
     boolean selecciono = FALSE;
-    int cedulaParticipante;
-    while (!selecciono) {
+    while (!selecciono && deseaContinuar) {
         printf("Ingrese la cedula de un participante: \n");
         scanf("%d", &cedulaParticipante);
         if (!Member(participantes, cedulaParticipante)) {
@@ -192,5 +191,4 @@ int seleccionarParticipante(Participantes participantes) // convertir a void y e
             selecciono = TRUE;
         }
     }
-    return cedulaParticipante;
 }

@@ -16,10 +16,12 @@ int DarNroJugador(Participante participante)
 }
 
 void DarNombre(Participante participante,string &nombre){
+    strcrear(nombre);
     return strcop(nombre, participante.nombre);
 }
 
 void DarApellido(Participante participante,string &apellido){
+    strcrear(apellido);
     return strcop(apellido, participante.apellido);
 }
 
@@ -34,21 +36,22 @@ int DarCantPartidasGanadas(Participante participante)
 }
 
 void DarDeptoProcedencia(Participante participante,string &depto){
+    strcrear(depto);
     return strcop(depto, participante.deptoProcedencia);
 }
 
 void crearParticipante(Participante &participante, int nroJugador){
-    printf("\n Ingrese su numero de cedula: ");
+    printf(" Ingrese su numero de cedula: ");
     scanf("%d", &participante.cedula);
-    printf("\n Ingrese su fecha de nacimiento: ");
+    printf(" Ingrese su fecha de nacimiento: ");
     crearFecha(participante.fechaNacimiento);
+    printf(" Ingrese el nombre: ");
     strcrear(participante.nombre);
-    printf("\n Ingrese el nombre: ");
     scan(participante.nombre);
-    printf("\n Ingrese el apellido: ");
+    printf(" Ingrese el apellido: ");
     strcrear(participante.apellido);
     scan(participante.apellido);
-    printf("\n Ingrese departamento de procedencia: ");
+    printf(" Ingrese departamento de procedencia: ");
     strcrear(participante.deptoProcedencia);
     scan(participante.deptoProcedencia);
     participante.cantPartidasGanadas = 0;
@@ -62,11 +65,14 @@ void desplegarParticipante(Participante participante){
     printf("\n Fecha de Nacimiento: ");
     desplegarFecha(DarFechaNacimiento(participante));
     printf("\n Nombre: ");
-    print(DarNombre(participante));
+    DarNombre(participante, participante.nombre);
+    print(participante.nombre);
     printf("\n Apellido: ");
-    print(DarApellido(participante));
+    DarApellido(participante, participante.apellido);
+    print(participante.apellido);
     printf("\n Departamento: ");
-    print(DarDeptoProcedencia(participante));
+    DarDeptoProcedencia(participante, participante.deptoProcedencia);
+    print(participante.deptoProcedencia);
     printf("\n Partidas Jugadas: %d", DarCantPartidasJugadas(participante));
     printf("\n Partidas Ganadas: %d \n\n", DarCantPartidasGanadas(participante));
 }

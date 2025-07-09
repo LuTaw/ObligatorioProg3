@@ -43,7 +43,7 @@ boolean validarFecha(Fecha fecha)
 
 void desplegarFecha(Fecha fecha)
 {
-    printf("\n %d/%d/%d", DarDia(fecha),DarMes(fecha),DarAnio(fecha));
+    printf(" %d/%d/%d", DarDia(fecha),DarMes(fecha),DarAnio(fecha));
 }
 
 boolean sonIguales(Fecha fecha1, Fecha fecha2)

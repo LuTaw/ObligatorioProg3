@@ -1,7 +1,5 @@
 #include "menu.h"
 
-/*using namespace std;
-
 const int MENU_ITEMS[] = {1, 2};
 const char* MENU_NAMES[] = {
     "Cargar Jugadores.",
@@ -26,7 +24,7 @@ void desplegarMenuPrincipal()
 {
     printf("Escoja la opcion deseada: \n\n");
     for(int i = 0; i < MENU_SIZE; i++) {
-        std::cout << MENU_ITEMS[i] << ". " << MENU_NAMES[i] << "\n";
+        printf("%d. %s \n", MENU_ITEMS[i], MENU_NAMES[i]);
     }
 }
 
@@ -34,28 +32,8 @@ void desplegarSegundoMenu()
 {
     printf("\n\n Seleccione la opcion deseada: \n\n");
     for(int i = 0; i < SEGUNDO_MENU_SIZE; i++) {
-        std::cout << SEGUNDO_MENU_ITEMS[i] << ". " << SEGUNDO_MENU_NAMES[i] << "\n";
+        printf("%d. %s \n", SEGUNDO_MENU_ITEMS[i], SEGUNDO_MENU_NAMES[i]);
     }
-}
-*/
-
-void menuPrincipal(int &opcion){
-	printf("\n 1 - Cargar jugadores");
-	printf("\n 2 - Menu Secundario");
-	printf("\n 3 - Salir");
-	scanf("%d", &opcion);
-}
-
-void menuSecundario(int &opcion){
-	printf("\n 1 - Desplegar jugadores registrados");
-	printf("\n 2 - Desplegar un jugador");
-	printf("\n 3 - Registrar encuentro para dos jugadores");
-	printf("\n 4 - Desplegar todas las partidas de forma ascendente");
-	printf("\n 5 - Dada una fecha, determinar cuantos jugadores nacieron en esa fecha, antes o despues");
-	printf("\n 6 - Determinar si dos jugadores pertenecen a la misma subdivision");
-	printf("\n 7 - Obtener ganador/es");
-	printf("\n 8 - Volver ");
-    scanf("%d", &opcion);
 }
 
 void procesarValorSegundoMenu(int opcionIngresada, Torneo &torneo, Participantes &participantes, Encuentros &encuentros)

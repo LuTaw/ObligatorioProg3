@@ -83,7 +83,6 @@ void strswp (string &s1, string &s2){
 
 void print (string s){
     int i=0;
-    printf("\n %s", s);
     while(s[i] != '\0'){
         printf("%c",s[i]);
         i++;
