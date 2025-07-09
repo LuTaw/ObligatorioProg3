@@ -179,7 +179,7 @@ void desplegarJugadoresGanadores(Participantes participantes)
 }
 
 // permite al usuario seleccionar una cedula por consola
-void seleccionarParticipante(Participantes participantes, int &cedulaParticipante, boolean &deseaContinuar) // convertir a void y entero por referencia, dar la opcion de cancelar
+void seleccionarParticipante(Participantes participantes, int &cedulaParticipante, boolean &deseaContinuar)
 {
     boolean selecciono = FALSE;
     int resultado, valorContinuar;
@@ -188,17 +188,17 @@ void seleccionarParticipante(Participantes participantes, int &cedulaParticipant
         scanf("%d", &cedulaParticipante);
         if (!Member(participantes, cedulaParticipante)) {
             printf("La cedula no es correcta. \n\n");
+
+            printf("Desea continuar seleccionando participante? Ingrese 0 por No y 1 por Si. \n");
+            resultado = scanf("%d", &valorContinuar);
+            while(resultado != 1 || (valorContinuar != 0 && valorContinuar !=1)) {
+                printf("Entrada invalida. Ingrese 0 por No y 1 por Si. \n ");
+                resultado = scanf("%d", &valorContinuar);
+            }
+            if (valorContinuar == 0)
+                deseaContinuar = FALSE;
         } else {
             selecciono = TRUE;
         }
-
-        printf("Desea continuar seleccionando participante? Ingrese 0 por No y 1 por Si. \n");
-        resultado = scanf("%d", &valorContinuar);
-        while(resultado != 1 || (valorContinuar != 0 && valorContinuar !=1)) {
-            printf("Entrada invalida. Ingrese 0 por No y 1 por Si. \n ");
-            resultado = scanf("%d", &valorContinuar);
-        }
-        if (valorContinuar == 0)
-            deseaContinuar = FALSE;
     }
 }
