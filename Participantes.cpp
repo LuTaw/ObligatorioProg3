@@ -191,6 +191,7 @@ void seleccionarParticipante(Participantes participantes, int &cedulaParticipant
         } else {
             selecciono = TRUE;
         }
+
         printf("Desea continuar seleccionando participante? Ingrese 0 por No y 1 por Si. \n");
         resultado = scanf("%d", &valorContinuar);
         while(resultado != 1 || (valorContinuar != 0 && valorContinuar !=1)) {

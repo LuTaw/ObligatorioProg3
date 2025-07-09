@@ -50,6 +50,7 @@ void desplegarEncuentros(Encuentros encuentros)
     int i = 0;
     while(i < Largo(encuentros)) {
         desplegarEncuentro(encuentros.encuentro[i]);
+        i++;
     }
 }
 
