@@ -82,10 +82,6 @@ void obtenerGanador(Torneo torneo, Participantes participantes, Encuentros encue
     }
 }
 
-// 	1. Registrar los datos de los N jugadores que participan del torneo. Esta operación se ejecutará
-//	solamente una vez, al comienzo del torneo. Los números de jugador irán siendo asignados por
-//	orden de registro (el primer jugador tendrá el número 0, el siguiente el 1 y así sucesivamente).
-//	Se debe verificar que cada cédula ingresada efectivamente sea única dentro del sistema.
 void registrarJugador(Torneo &torneo, Participantes &participantes)
 {
     int cantJugadoresActual = 0;
@@ -114,19 +110,16 @@ void desplegarJugadoresRegistrados(Participantes participantes)
 
 void desplegarJugador(Participantes participantes)
 {
-    boolean existe = FALSE;
-    while(!existe){
-        int ced;
-        printf(" Ingrese la cedula del jugador: ");
-        scanf("%d", &ced);
-        if(Member(participantes,ced)){
-            Participante p = Find(participantes, ced);
-            desplegarParticipante(p);
-            existe = TRUE;
-        } else {
-            printf(" No existe participante con esa cedula. ");
-        }
-    }
+    int cedula;
+	boolean encontro = TRUE;
+
+	seleccionarParticipante(participantes, cedula, encontro);
+	if(encontro) {
+		Participante p = Find(participantes, cedula);
+		desplegarParticipante(p);
+	} else {
+		printf(" Debe seleccionar un participante valido");
+	}
 }
 
 void desplegarTodasPartidasAscendente(Encuentros encuentros)
