@@ -10,13 +10,13 @@ Encuentro crearEncuentro(int nuevoIdEncuentro, int cedulaParticipante1, int cedu
     boolean determinarGanador = FALSE;
     int cedulaGanadorEncuentro;
     while(!determinarGanador) {
-        printf("Ingrese la cedula del ganador de este encuentro: \n\n");
+        printf(" Ingrese la cedula del ganador de este encuentro: \n\n");
         scanf("%d", &cedulaGanadorEncuentro);
         if (cedulaGanadorEncuentro == cedulaParticipante1 || cedulaGanadorEncuentro == cedulaParticipante2) {
             determinarGanador = TRUE;
             encuentro.cedulaGanador = cedulaGanadorEncuentro;
         } else {
-            printf("La cedula del ganador debe coincidir con alguno de los dos participantes de este encuentro. \n\n");
+            printf(" La cedula del ganador debe coincidir con alguno de los dos participantes de este encuentro. \n\n");
         }
     }
 

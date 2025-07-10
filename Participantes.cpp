@@ -164,7 +164,7 @@ void desplegarJugadoresGanadores(Participantes participantes)
     }
 
     // Segunda pasada: para mostrar a todos los jugadores que tienen ese máximo
-    printf("Ganador/es del torneo con %d partidas ganadas", maxGanadas);
+    printf(" Ganador/es del torneo con %d partidas ganadas", maxGanadas);
 
     for (int i = 0; i < CantParticipantes; ++i) {
         ListaParticipante actual = participantes[i];
@@ -183,15 +183,15 @@ void seleccionarParticipante(Participantes participantes, int &cedulaParticipant
     boolean selecciono = FALSE;
     int resultado, valorContinuar;
     while (!selecciono && deseaContinuar) {
-        printf("Ingrese la cedula de un participante: \n");
+        printf(" Ingrese la cedula de un participante: \n");
         scanf("%d", &cedulaParticipante);
         if (!Member(participantes, cedulaParticipante)) {
-            printf("La cedula no es correcta. \n\n");
+            printf(" La cedula no es correcta. \n\n");
 
-            printf("Desea continuar seleccionando participante? Ingrese 0 por No y 1 por Si. \n");
+            printf(" Desea continuar seleccionando participante? Ingrese 0 por No y 1 por Si. \n");
             resultado = scanf("%d", &valorContinuar);
             while(resultado != 1 || (valorContinuar != 0 && valorContinuar !=1)) {
-                printf("Entrada invalida. Ingrese 0 por No y 1 por Si. \n ");
+                printf(" Entrada invalida. Ingrese 0 por No y 1 por Si. \n ");
                 resultado = scanf("%d", &valorContinuar);
             }
             if (valorContinuar == 0)

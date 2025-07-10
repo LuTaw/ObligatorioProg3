@@ -33,16 +33,16 @@ void registrarEncuentro(Torneo &torneo, Participantes &participantes, Encuentros
                             Modify(participantes, participante1);
                             Modify(participantes, participante2);
                         } else {
-                            printf("Los jugadores seleccionados ya jugaron una partida entre ellos, deben ser jugadores que no hayan jugado una partida aun. \n\n\n");
+                            printf(" Los jugadores seleccionados ya jugaron una partida entre ellos, deben ser jugadores que no hayan jugado una partida aun. \n\n\n");
                         }
                     }
                     else
-                        printf("Debe seleccionar participantes diferentes. \n\n\n");
+                        printf(" Debe seleccionar participantes diferentes. \n\n\n");
                 }
             }
         }
     } else {
-        printf("El torneo ha finalizado, por lo que no se pueden ingresar mas encuentros. \n\n\n");
+        printf(" El torneo ha finalizado, por lo que no se pueden ingresar mas encuentros. \n\n\n");
     }
 }
 
@@ -62,11 +62,11 @@ void determinarMismaSubDivision(Torneo torneo, Participantes participantes)
                     selecciono = TRUE;
                     boolean pertenecen = pertencenMismaSubDivision(torneo, darNroJugador(participante1), darNroJugador(participante2));
                     if(pertenecen)
-                        printf("Los jugadores seleccionadas pertenecen a la misma subdivision. \n\n\n");
+                        printf(" Los jugadores seleccionadas pertenecen a la misma subdivision. \n\n\n");
                     else
-                        printf("Los jugadores seleccionadas NO pertenecen a la misma subdivision. \n\n\n");
+                        printf(" Los jugadores seleccionadas NO pertenecen a la misma subdivision. \n\n\n");
                 } else {
-                    printf("Debe seleccionar participantes diferentes. \n\n");
+                    printf(" Debe seleccionar participantes diferentes. \n\n");
                 }
             }
         }
@@ -78,7 +78,7 @@ void obtenerGanador(Torneo torneo, Participantes participantes, Encuentros encue
     if (torneoTerminado(encuentros)) {
         desplegarJugadoresGanadores(participantes);
     } else {
-        printf("El torneo aun no ha finalizado por lo que no se pueden determinar aun los ganadores del torneo. \n\n\n");
+        printf(" El torneo aun no ha finalizado por lo que no se pueden determinar aun los ganadores del torneo. \n\n\n");
     }
 }
 
@@ -99,7 +99,7 @@ void registrarJugador(Torneo &torneo, Participantes &participantes)
                 cantJugadoresActual++;
                 participanteValido = TRUE;
                 printf("\n\n Participante ingresado correctamente!! \n\n");
-                printf("Restan %d participantes por ingresar... \n\n", CantParticipantes - cantJugadoresActual);
+                printf(" Restan %d participantes por ingresar... \n\n", CantParticipantes - cantJugadoresActual);
             } else {
                 printf("\n\n Participante no valido, ya existe uno con la misma CI, ingrese los datos nuevamente \n\n");
             }
@@ -137,19 +137,22 @@ void desplegarTodasPartidasAscendente(Encuentros encuentros)
         printf("\n\n Aun no hay ningun encuentro registrado en el sistema.");
 }
 
-
 void cantParticipantesSegunFecha(Participantes participantes)
 {
-  /*  boolean ok = FALSE;
+    boolean ok = FALSE;
     while(!ok){
         Fecha fecha;
         printf(" Ingrese una fecha valida: ");
         crearFecha(fecha);
         if(validarFecha(fecha)){
-
-
+            ok = TRUE;
+            int cantIgual = 0, cantMenor = 0, cantMayor = 0;
+            cantParticipantesSegunFecha(participantes,fecha,cantIgual,cantMenor,cantMayor);
+            printf(" Participantes nacidos en la fecha: %d",cantIgual);
+            printf(" Participantes nacidos antes de la fecha: %d",cantMenor);
+            printf(" Participantes nacidos despues de la fecha: %d",cantMayor);
+        } else {
+            printf(" Ingrese una fecha valida. ");
         }
     }
-}
-*/
 }

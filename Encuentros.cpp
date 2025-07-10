@@ -32,7 +32,7 @@ void insertarEncuentroFinal(Encuentros &encuentros, Encuentro enc)
         encuentros.encuentro[encuentros.tope] = enc;
         encuentros.tope++;
     } else {
-        printf("Ocurrio un error, el arreglo esta lleno.");
+        printf(" Ocurrio un error, el arreglo esta lleno. \n\n");
     }
 }
 
