@@ -22,6 +22,7 @@ boolean EsVacia(Encuentros encuentros);
 int Largo(Encuentros encuentros);
 
 // inserta el encuentro dentro del arreglo Encuentros
+// PreCondicion: el arreglo no esta lleno, es decir el torneo no ha terminado aun.
 void insertarEncuentroFinal(Encuentros &encuentros, Encuentro enc);
 
 // despliega por pantalla todos los encuentros
