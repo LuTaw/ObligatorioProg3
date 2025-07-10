@@ -8,10 +8,6 @@ typedef int Torneo[CantParticipantes][CantParticipantes];
 // Crea un grafo vacío
 void CrearTorneo(Torneo &torneo);
 
-// PerteneceVertice : Grafo x V  Boolean
-// Determina si en el grafo existe el vértice especificado.
-boolean PerteneceVertice(Torneo torneo, int v);
-
 // PerteneceArista : Grafo x A  Boolean
 // Determina si en el grafo existe la arista especificada.
 boolean PerteneceArista(Torneo torneo, int v, int u);
@@ -21,12 +17,7 @@ boolean PerteneceArista(Torneo torneo, int v, int u);
 // Precondición: la arista no pertenece al grafo.
 void InsertarArista(Torneo &torneo, int u, int v);
 
-// GradoVertice : Grafo x V  Entero
-// Devuelve el grado del vértice especificado.
-// Precondición: el vértice pertenece al grafo.
-int GradoVertice(Torneo torneo, int u);
-
-///determina si pertenecen
+// determina si pertenencen a la misma subdivision, esto es si existe un camino entre ambos vertices.
 boolean pertencenMismaSubDivision(Torneo torneo, int nroJugador1, int nroJugador2);
 
 #endif // TORNEO_H_INCLUDED
