@@ -52,7 +52,7 @@ void procesarValorSegundoMenu(int opcionIngresada, Torneo &torneo, Participantes
             desplegarTodasPartidasAscendente(encuentros);
             break;
         case 5:
-            cantParticipantesSegunFecha(torneo);
+            cantParticipantesSegunFecha(participantes);
             break;
         case 6:
             determinarMismaSubDivision(torneo, participantes);

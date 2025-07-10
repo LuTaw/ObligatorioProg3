@@ -13,30 +13,30 @@ typedef struct { int cedula;
                 int cantPartidasGanadas;
               } Participante;
 
-int DarCedula(Participante participante);
+int darCedula(Participante participante);
 
-Fecha DarFechaNacimiento(Participante participante);
+Fecha darFechaNacimiento(Participante participante);
 
-int DarNroJugador(Participante participante);
+int darNroJugador(Participante participante);
 
-void DarNombre(Participante participante,string &nombre);
+void darNombre(Participante participante,string &nombre);
 
-void DarApellido(Participante participante,string &apellido);
+void darApellido(Participante participante,string &apellido);
 
-void DarDeptoProcedencia(Participante participante,string &depto);
+void darDeptoProcedencia(Participante participante,string &depto);
 
-int DarCantPartidasJugadas(Participante participante);
+int darCantPartidasJugadas(Participante participante);
 
-int DarCantPartidasGanadas(Participante participante);
+int darCantPartidasGanadas(Participante participante);
 
 void crearParticipante(Participante &participante, int nroJugador);
 
 void desplegarParticipante(Participante participante);
 
 // incrementa en uno la cantidad de partidas ganadas para un participante.
-void IncrementarCantPartidasGanadas(Participante &participante);
+void incrementarCantPartidasGanadas(Participante &participante);
 
 // incrementa en uno la cantidad de partidas jugadas para un participante.
-void IncrementarCantPartidasJugadas(Participante &participante);
+void incrementarCantPartidasJugadas(Participante &participante);
 
 #endif // PARTICIPANTE_H_INCLUDED

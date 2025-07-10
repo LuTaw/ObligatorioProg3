@@ -13,23 +13,23 @@ void registrarEncuentro(Torneo &torneo, Participantes &participantes, Encuentros
                 seleccionarParticipante(participantes, cedulaParticipante2, deseaContinuar);
                 if (deseaContinuar) {
                     Participante participante2 = Find(participantes, cedulaParticipante2);
-                    if (DarCedula(participante1) != DarCedula(participante2)) {
-                        int nroJugador1 = DarNroJugador(participante1);
-                        int nroJugador2 = DarNroJugador(participante2);
+                    if (darCedula(participante1) != darCedula(participante2)) {
+                        int nroJugador1 = darNroJugador(participante1);
+                        int nroJugador2 = darNroJugador(participante2);
                         if(!PerteneceArista(torneo, nroJugador1, nroJugador2)) {
                             selecciono = TRUE;
                             InsertarArista(torneo, nroJugador1, nroJugador2);
                             int nuevoIdEncuentro = Largo(encuentros) + 1;
-                            Encuentro encuentro = crearEncuentro(nuevoIdEncuentro, DarCedula(participante1), DarCedula(participante2));
+                            Encuentro encuentro = crearEncuentro(nuevoIdEncuentro, darCedula(participante1), darCedula(participante2));
                             insertarEncuentroFinal(encuentros, encuentro);
-                            int cedulaGanador = DarCedulaGanador(encuentro);
-                            if (cedulaGanador == DarCedula(participante1)) {
-                                IncrementarCantPartidasGanadas(participante1);
+                            int cedulaGanador = darCedulaGanador(encuentro);
+                            if (cedulaGanador == darCedula(participante1)) {
+                                incrementarCantPartidasGanadas(participante1);
                             } else {
-                                IncrementarCantPartidasGanadas(participante2);
+                                incrementarCantPartidasGanadas(participante2);
                             }
-                            IncrementarCantPartidasJugadas(participante1);
-                            IncrementarCantPartidasJugadas(participante2);
+                            incrementarCantPartidasJugadas(participante1);
+                            incrementarCantPartidasJugadas(participante2);
                             Modify(participantes, participante1);
                             Modify(participantes, participante2);
                         } else {
@@ -58,9 +58,9 @@ void determinarMismaSubDivision(Torneo torneo, Participantes participantes)
             seleccionarParticipante(participantes, cedulaParticipante2, deseaContinuar);
             if (deseaContinuar) {
                 Participante participante2 = Find(participantes, cedulaParticipante2);
-                if (DarCedula(participante1) != DarCedula(participante2)) {
+                if (darCedula(participante1) != darCedula(participante2)) {
                     selecciono = TRUE;
-                    boolean pertenecen = pertencenMismaSubDivision(torneo, DarNroJugador(participante1), DarNroJugador(participante2));
+                    boolean pertenecen = pertencenMismaSubDivision(torneo, darNroJugador(participante1), darNroJugador(participante2));
                     if(pertenecen)
                         printf("Los jugadores seleccionadas pertenecen a la misma subdivision. \n\n\n");
                     else
@@ -94,7 +94,7 @@ void registrarJugador(Torneo &torneo, Participantes &participantes)
         while(!participanteValido) {
             Participante participante;
             crearParticipante(participante, cantJugadoresActual);
-            if (!Member(participantes, DarCedula(participante))) {
+            if (!Member(participantes, darCedula(participante))) {
                 Insert(participantes, participante);
                 cantJugadoresActual++;
                 participanteValido = TRUE;
@@ -137,10 +137,10 @@ void desplegarTodasPartidasAscendente(Encuentros encuentros)
         printf("\n\n Aun no hay ningun encuentro registrado en el sistema.");
 }
 
-/*
+
 void cantParticipantesSegunFecha(Participantes participantes)
 {
-    boolean ok = FALSE;
+  /*  boolean ok = FALSE;
     while(!ok){
         Fecha fecha;
         printf(" Ingrese una fecha valida: ");
@@ -151,5 +151,5 @@ void cantParticipantesSegunFecha(Participantes participantes)
         }
     }
 }
-}
 */
+}

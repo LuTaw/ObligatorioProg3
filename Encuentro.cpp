@@ -25,27 +25,27 @@ Encuentro crearEncuentro(int nuevoIdEncuentro, int cedulaParticipante1, int cedu
 
 void desplegarEncuentro(Encuentro encuentro)
 {
-    printf("\n\n Es el encuentro numero: %d \n", DarNroEncuentro(encuentro));\
-    printf("\n Los participantes fueron: %d y %d \n", DarCedulaParticipante1(encuentro), DarCedulaParticipante2(encuentro));
-    printf("\n El ganador del encuentro fue: %d \n\n", DarCedulaGanador(encuentro));
+    printf("\n\n Es el encuentro numero: %d \n", darNroEncuentro(encuentro));\
+    printf("\n Los participantes fueron: %d y %d \n", darCedulaParticipante1(encuentro), darCedulaParticipante2(encuentro));
+    printf("\n El ganador del encuentro fue: %d \n\n", darCedulaGanador(encuentro));
 }
 
-int DarNroEncuentro(Encuentro encuentro)
+int darNroEncuentro(Encuentro encuentro)
 {
     return encuentro.nroEncuentro;
 }
 
-int DarCedulaParticipante1(Encuentro encuentro)
+int darCedulaParticipante1(Encuentro encuentro)
 {
     return encuentro.cedulaParticipante1;
 }
 
-int DarCedulaParticipante2(Encuentro encuentro)
+int darCedulaParticipante2(Encuentro encuentro)
 {
     return encuentro.cedulaParticipante2;
 }
 
-int DarCedulaGanador(Encuentro encuentro)
+int darCedulaGanador(Encuentro encuentro)
 {
     return encuentro.cedulaGanador;
 }

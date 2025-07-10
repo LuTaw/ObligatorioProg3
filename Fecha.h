@@ -7,11 +7,11 @@ typedef struct { int dia;
                  int anio;
                } Fecha;
 
-int DarDia(Fecha fecha);
+int darDia(Fecha fecha);
 
-int DarMes(Fecha fecha);
+int darMes(Fecha fecha);
 
-int DarAnio(Fecha fecha);
+int darAnio(Fecha fecha);
 
 void crearFecha(Fecha &fecha);
 

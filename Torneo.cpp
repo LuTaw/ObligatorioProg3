@@ -57,14 +57,14 @@ int GradoVertice(Torneo torneo, int u)
     return grado;
 }
 
-void DFSMismaSubDivision(Torneo torneo, int actual, boolean visitado[CantParticipantes], int nroJugador2)
+void dfsMismaSubDivision(Torneo torneo, int actual, boolean visitado[CantParticipantes], int nroJugador2)
 {
     visitado[actual] = TRUE;
     int i = 0;
     while(!visitado[nroJugador2] && i < CantParticipantes) {
         if(torneo[actual][i] == 1) {
             if(!visitado[i])
-                DFSMismaSubDivision(torneo, i, visitado, nroJugador2);
+                dfsMismaSubDivision(torneo, i, visitado, nroJugador2);
         }
         i++;
     }
@@ -81,7 +81,7 @@ boolean pertencenMismaSubDivision(Torneo torneo, int nroJugador1, int nroJugador
         for(int i = 0; i < CantParticipantes; i++) {
             visitado[i] = FALSE;
         }
-        DFSMismaSubDivision(torneo, nroJugador1, visitado, nroJugador2);
+        dfsMismaSubDivision(torneo, nroJugador1, visitado, nroJugador2);
 
         if (visitado[nroJugador1] && visitado[nroJugador2])
             pertenecen = TRUE;
@@ -89,5 +89,3 @@ boolean pertencenMismaSubDivision(Torneo torneo, int nroJugador1, int nroJugador
 
     return pertenecen;
 }
-
-
