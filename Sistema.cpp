@@ -114,7 +114,16 @@ void desplegarJugadoresRegistrados(Participantes participantes)
 
 void desplegarJugador(Participantes participantes)
 {
+    int cedula;
+	boolean encontro = TRUE;
 
+	seleccionarParticipante(participantes, cedula, encontro);
+	if(encontro){
+		Participante p = Find(participantes, cedula);
+		desplegarParticipante(p);
+	} else {
+		printf(" Debe seleccionar un participante valido");
+	}
 }
 
 void desplegarTodasPartidasAscendente(Encuentros encuentros)
