@@ -114,7 +114,6 @@ void desplegarJugadoresRegistrados(Participantes participantes)
 
 void desplegarJugador(Participantes participantes)
 {
-<<<<<<< HEAD
     int cedula;
 	boolean encontro = TRUE;
 
@@ -125,21 +124,6 @@ void desplegarJugador(Participantes participantes)
 	} else {
 		printf(" Debe seleccionar un participante valido");
 	}
-=======
-    boolean existe = FALSE;
-    while(!existe){
-        int ced;
-        printf(" Ingrese la cedula del jugador: ");
-        scanf("%d", &ced);
-        if(Member(participantes,ced)){
-            Participante p = Find(participantes, ced);
-            desplegarParticipante(p);
-            existe = TRUE;
-        } else {
-            printf(" No existe participante con esa cedula. ");
-        }
-    }
->>>>>>> a28f82147923abe38e06a744cd8b2f7bd10dab94
 }
 
 void desplegarTodasPartidasAscendente(Encuentros encuentros)
