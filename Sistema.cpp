@@ -122,7 +122,7 @@ void desplegarJugador(Participantes participantes)
 		Participante p = Find(participantes, cedula);
 		desplegarParticipante(p);
 	} else {
-		printf(" Debe seleccionar un participante valido");
+		printf(" Debe seleccionar un participante valido ");
 	}
 }
 
