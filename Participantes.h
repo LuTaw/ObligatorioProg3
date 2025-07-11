@@ -33,13 +33,13 @@ Participante Find(Participantes p, int ced);
 // Precondición: el elemento a sustituir es miembro del diccionario
 void Modify(Participantes &p, Participante part);
 
-///despliega participantes por pantalla
+// despliega participantes por pantalla
 void desplegarParticipantes(Participantes participante);
 
-///determina para una fecha dada, cantidad de participantes que nacieron antes, durante y luego de la misma
+// determina para una fecha dada, cantidad de participantes que nacieron antes, durante y luego de la misma
 void cantParticipantesSegunFecha(Participantes participantes,Fecha f1, int &cantIgual, int &cantMenor, int &cantMayor);
 
-/// determina cantidad de encuentros ganados por jugador
+// determina cantidad de encuentros ganados por jugador
 void desplegarJugadoresGanadores(Participantes participantes);
 
 // permite al usuario seleccionar una cedula por consola

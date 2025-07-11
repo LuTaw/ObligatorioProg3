@@ -12,17 +12,6 @@ void CrearTorneo(Torneo &torneo)
     }
 }
 
-// PerteneceVertice : Grafo x V  Boolean
-// Determina si en el grafo existe el vértice especificado.
-boolean PerteneceVertice(Torneo torneo, int v)  // se puede comparar directamente con CantParticpantes porque es fijo
-{
-    boolean encontro = FALSE;
-    if (CantParticipantes > v)
-        encontro = TRUE;
-
-    return encontro;
-}
-
 // PerteneceArista : Grafo x A  Boolean
 // Determina si en el grafo existe la arista especificada.
 boolean PerteneceArista(Torneo torneo, int v, int u)
@@ -43,28 +32,14 @@ void InsertarArista(Torneo &torneo, int u, int v)
     torneo[v][u] = 1;
 }
 
-// GradoVertice : Grafo x V  Entero
-// Devuelve el grado del vértice especificado.
-// Precondición: el vértice pertenece al grafo.
-int GradoVertice(Torneo torneo, int u)
-{
-    int grado = 0;
-    for(int i = 0; i < CantParticipantes; i++) {
-        if (torneo[u][i] == 1)
-            grado++;
-    }
-
-    return grado;
-}
-
-void DFSMismaSubDivision(Torneo torneo, int actual, boolean visitado[CantParticipantes], int nroJugador2)
+void dfsMismaSubDivision(Torneo torneo, int actual, boolean visitado[CantParticipantes], int nroJugador2)
 {
     visitado[actual] = TRUE;
     int i = 0;
     while(!visitado[nroJugador2] && i < CantParticipantes) {
         if(torneo[actual][i] == 1) {
             if(!visitado[i])
-                DFSMismaSubDivision(torneo, i, visitado, nroJugador2);
+                dfsMismaSubDivision(torneo, i, visitado, nroJugador2);
         }
         i++;
     }
@@ -81,7 +56,7 @@ boolean pertencenMismaSubDivision(Torneo torneo, int nroJugador1, int nroJugador
         for(int i = 0; i < CantParticipantes; i++) {
             visitado[i] = FALSE;
         }
-        DFSMismaSubDivision(torneo, nroJugador1, visitado, nroJugador2);
+        dfsMismaSubDivision(torneo, nroJugador1, visitado, nroJugador2);
 
         if (visitado[nroJugador1] && visitado[nroJugador2])
             pertenecen = TRUE;
@@ -89,5 +64,3 @@ boolean pertencenMismaSubDivision(Torneo torneo, int nroJugador1, int nroJugador
 
     return pertenecen;
 }
-
-

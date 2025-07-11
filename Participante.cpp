@@ -1,45 +1,54 @@
 #include "Participante.h"
 
-int DarCedula(Participante participante)
+// devuelve la cedula de un participante dado.
+int darCedula(Participante participante)
 {
     return participante.cedula;
 }
 
-Fecha DarFechaNacimiento(Participante participante)
+// devuelve la fecha de nacimiento del participante dado.
+Fecha darFechaNacimiento(Participante participante)
 {
     return participante.fechaNacimiento;
 }
 
-int DarNroJugador(Participante participante)
+// devuelve el numero de jugador asignado al participante en el momento de la inscripcion al torneo.
+int darNroJugador(Participante participante)
 {
     return participante.nroJugador;
 }
 
-void DarNombre(Participante participante,string &nombre){
+// obtiene el nombre del participante dado y lo almacena en la variable nombre pasada por referencia.
+void darNombre(Participante participante,string &nombre){
     strcrear(nombre);
     return strcop(nombre, participante.nombre);
 }
 
-void DarApellido(Participante participante,string &apellido){
+// obtiene el apellido del participante dado y lo almacena en la variable apellido pasada por referencia.
+void darApellido(Participante participante,string &apellido){
     strcrear(apellido);
     return strcop(apellido, participante.apellido);
 }
 
-int DarCantPartidasJugadas(Participante participante)
+// obtiene el departamento de procedencia del participante dado y lo almacena en la variable depto pasada por referencia.
+int darCantPartidasJugadas(Participante participante)
 {
     return participante.cantPartidasJugadas;
 }
 
-int DarCantPartidasGanadas(Participante participante)
+// devuelve la cantidad de partidas jugadas de un participante dado.
+int darCantPartidasGanadas(Participante participante)
 {
     return participante.cantPartidasGanadas;
 }
 
-void DarDeptoProcedencia(Participante participante,string &depto){
+// devuelve la cantidad de partidas ganadas de un participante dado.
+void darDeptoProcedencia(Participante participante,string &depto){
     strcrear(depto);
     return strcop(depto, participante.deptoProcedencia);
 }
 
+// interactua con el usuario mediante la consola para crear el participante
 void crearParticipante(Participante &participante, int nroJugador){
     printf(" Ingrese su numero de cedula: ");
     scanf("%d", &participante.cedula);
@@ -59,33 +68,33 @@ void crearParticipante(Participante &participante, int nroJugador){
     participante.nroJugador = nroJugador;
 }
 
+// despliega el participante en pantalla.
 void desplegarParticipante(Participante participante){
-    printf("\n Participante con numero de jugador: %d", DarNroJugador(participante));
-    printf("\n Cedula: %d ", DarCedula(participante));
+    printf("\n Participante con numero de jugador: %d", darNroJugador(participante));
+    printf("\n Cedula: %d ", darCedula(participante));
     printf("\n Fecha de Nacimiento: ");
-    desplegarFecha(DarFechaNacimiento(participante));
+    desplegarFecha(darFechaNacimiento(participante));
     printf("\n Nombre: ");
-    DarNombre(participante, participante.nombre);
+    darNombre(participante, participante.nombre);
     print(participante.nombre);
     printf("\n Apellido: ");
-    DarApellido(participante, participante.apellido);
+    darApellido(participante, participante.apellido);
     print(participante.apellido);
     printf("\n Departamento: ");
-    DarDeptoProcedencia(participante, participante.deptoProcedencia);
+    darDeptoProcedencia(participante, participante.deptoProcedencia);
     print(participante.deptoProcedencia);
-    printf("\n Partidas Jugadas: %d", DarCantPartidasJugadas(participante));
-    printf("\n Partidas Ganadas: %d \n\n", DarCantPartidasGanadas(participante));
+    printf("\n Partidas Jugadas: %d", darCantPartidasJugadas(participante));
+    printf("\n Partidas Ganadas: %d \n\n", darCantPartidasGanadas(participante));
 }
 
 // incrementa en uno la cantidad de partidas ganadas para un participante.
-void IncrementarCantPartidasGanadas(Participante &participante)
+void incrementarCantPartidasGanadas(Participante &participante)
 {
     participante.cantPartidasGanadas++;
 }
 
 // incrementa en uno la cantidad de partidas jugadas para un participante.
-void IncrementarCantPartidasJugadas(Participante &participante)
+void incrementarCantPartidasJugadas(Participante &participante)
 {
     participante.cantPartidasJugadas++;
 }
-

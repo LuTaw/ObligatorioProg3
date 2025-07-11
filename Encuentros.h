@@ -13,7 +13,6 @@ typedef struct { Encuentro encuentro[CantMaximaPartidas];
 // Crea una secuencia vacía.
 void CrearEncuentros(Encuentros &encuentros);
 
-
 // EsVacía : Secuencia -> Boolean
 // Determina si la secuencia está vacía o no.
 boolean EsVacia(Encuentros encuentros);
@@ -22,18 +21,14 @@ boolean EsVacia(Encuentros encuentros);
 // Devuelve la cantidad de elementos de la secuencia.
 int Largo(Encuentros encuentros);
 
-// K-ésimo: Secuencia x N -> T
-// Devuelve el elemento que ocupa la posición K de la secuencia.
-// Precondición: El largo de la secuencia es mayor o igual a K.
-Encuentro Kesimo(Encuentros encuentros, int pos);
-
-//inserta el encuentro dentro del arreglo Encuentros
+// inserta el encuentro dentro del arreglo Encuentros
+// PreCondicion: el arreglo no esta lleno, es decir el torneo no ha terminado aun.
 void insertarEncuentroFinal(Encuentros &encuentros, Encuentro enc);
 
-//despliega por pantalla todos los encuentros
+// despliega por pantalla todos los encuentros
 void desplegarEncuentros(Encuentros encuentros);
 
-//determina si el torneo ha finalizado
+// determina si el torneo ha finalizado
 boolean torneoTerminado(Encuentros encuentros);
 
 #endif // ENCUENTROS_H_INCLUDED

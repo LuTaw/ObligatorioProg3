@@ -43,4 +43,7 @@
 bin/
 obj/
 
+
+Obligatorio.cscope_file_list
+
 # End of https://www.toptal.com/developers/gitignore/api/c++,codeblocks
