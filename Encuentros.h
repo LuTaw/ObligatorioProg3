@@ -26,8 +26,10 @@ int Largo(Encuentros encuentros);
 // Precondición: El largo de la secuencia es mayor o igual a K.
 Encuentro Kesimo(Encuentros encuentros, int pos);
 
-// inserta el encuentro dentro del arreglo Encuentros
-// PreCondicion: el arreglo no esta lleno, es decir el torneo no ha terminado aun.
+//inserta el encuentro dentro del arreglo Encuentros
+// PreCondicion:
+//      - el arreglo no esta lleno, es decir el torneo no ha terminado aun.
+//      - el encuentro a insertar no pertenece a Encuentros
 void insertarEncuentroFinal(Encuentros &encuentros, Encuentro enc);
 
 // despliega por pantalla todos los encuentros

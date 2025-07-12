@@ -85,7 +85,6 @@ void segundoMenu(Torneo &torneo, Participantes &participantes)
     }
 }
 
-
 void procesarValorMenuPrincipal(int opcionMenuPrincipal)
 {
     Torneo torneo;
@@ -106,4 +105,3 @@ void procesarValorMenuPrincipal(int opcionMenuPrincipal)
             break;
     }
 }
-
