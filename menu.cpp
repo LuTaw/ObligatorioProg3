@@ -43,7 +43,7 @@ void procesarValorSegundoMenu(int opcionIngresada, Torneo &torneo, Participantes
             desplegarJugadoresRegistrados(participantes);
             break;
         case 2:
-            desplegarJugador(participantes);
+            desplegarJugador(torneo, participantes, encuentros);
             break;
         case 3:
             registrarEncuentro(torneo, participantes, encuentros);

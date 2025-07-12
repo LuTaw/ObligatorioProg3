@@ -32,6 +32,20 @@ void InsertarArista(Torneo &torneo, int u, int v)
     torneo[v][u] = 1;
 }
 
+// GradoVertice : Grafo x V  Entero
+// Devuelve el grado del vértice especificado.
+// Precondición: el vértice pertenece al grafo.
+int GradoVertice(Torneo torneo, int u)
+{
+    int grado = 0;
+    for(int i = 0; i < CantParticipantes; i++) {
+        if (torneo[u][i] == 1)
+            grado++;
+    }
+
+    return grado;
+}
+
 void dfsMismaSubDivision(Torneo torneo, int actual, boolean visitado[CantParticipantes], int nroJugador2)
 {
     visitado[actual] = TRUE;

@@ -25,6 +25,14 @@ int Largo(Encuentros encuentros)
     return encuentros.tope;
 }
 
+// K-ésimo: Secuencia x N -> T
+// Devuelve el elemento que ocupa la posición K de la secuencia.
+// Precondición: El largo de la secuencia es mayor o igual a K.
+Encuentro Kesimo(Encuentros encuentros, int pos)
+{
+    return encuentros.encuentro[pos];
+}
+
 //inserta el encuentro dentro del arreglo Encuentros
 // PreCondicion: el arreglo no esta lleno, es decir el torneo no ha terminado aun.
 void insertarEncuentroFinal(Encuentros &encuentros, Encuentro enc)
