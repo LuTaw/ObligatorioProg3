@@ -35,9 +35,9 @@ void registrarEncuentro(Torneo &torneo, Participantes &participantes, Encuentros
                         } else {
                             printf(" Los jugadores seleccionados ya jugaron una partida entre ellos, deben ser jugadores que no hayan jugado una partida aun. \n\n\n");
                         }
-                    }
-                    else
+                    } else {
                         printf(" Debe seleccionar participantes diferentes. \n\n\n");
+                    }
                 }
             }
         }
@@ -82,10 +82,6 @@ void obtenerGanador(Torneo torneo, Participantes participantes, Encuentros encue
     }
 }
 
-// 	1. Registrar los datos de los N jugadores que participan del torneo. Esta operación se ejecutará
-//	solamente una vez, al comienzo del torneo. Los números de jugador irán siendo asignados por
-//	orden de registro (el primer jugador tendrá el número 0, el siguiente el 1 y así sucesivamente).
-//	Se debe verificar que cada cédula ingresada efectivamente sea única dentro del sistema.
 void registrarJugador(Torneo &torneo, Participantes &participantes)
 {
     int cantJugadoresActual = 0;
@@ -112,17 +108,36 @@ void desplegarJugadoresRegistrados(Participantes participantes)
     desplegarParticipantes(participantes);
 }
 
-void desplegarJugador(Participantes participantes)
+void desplegarEncuentrosJugadorSeleccionado(Encuentros encuentros, int cedulaParicipante)
+{
+    Encuentro encuentro;
+    int total = 0;
+    for(int i = 0; i < encuentros.tope; i++) {
+        encuentro = Kesimo(encuentros, i);
+        if(darCedulaParticipante1(encuentro) == cedulaParicipante || darCedulaParticipante2(encuentro) == cedulaParicipante) {
+            desplegarEncuentro(encuentro);
+            total++;
+        }
+    }
+    printf("\n Total de encuentros jugados por el participante: %d \n", total);
+}
+
+void desplegarJugador(Torneo torneo, Participantes participantes, Encuentros encuentros)
 {
     int cedula;
 	boolean encontro = TRUE;
 
 	seleccionarParticipante(participantes, cedula, encontro);
-	if(encontro){
+	if(encontro) {
 		Participante p = Find(participantes, cedula);
 		desplegarParticipante(p);
+		if (GradoVertice(torneo, darNroJugador(p)) > 0) {
+            desplegarEncuentrosJugadorSeleccionado(encuentros, darCedula(p));
+		} else {
+            printf(" El jugador seleccionado aun no ha participado de ningun encuentro. \n\n");
+		}
 	} else {
-		printf(" Debe seleccionar un participante valido ");
+		printf(" Debe seleccionar un participante valido \n\n");
 	}
 }
 
@@ -131,7 +146,7 @@ void desplegarTodasPartidasAscendente(Encuentros encuentros)
     if(!EsVacia(encuentros))
         desplegarEncuentros(encuentros);
     else
-        printf("\n\n Aun no hay ningun encuentro registrado en el sistema.");
+        printf("\n\n Aun no hay ningun encuentro registrado en el sistema. \n");
 }
 
 void cantParticipantesSegunFecha(Participantes participantes)
@@ -139,17 +154,17 @@ void cantParticipantesSegunFecha(Participantes participantes)
     boolean ok = FALSE;
     while(!ok){
         Fecha fecha;
-        printf(" Ingrese una fecha valida: ");
+        printf("\n\n Ingrese una fecha valida: ");
         crearFecha(fecha);
         if(validarFecha(fecha)){
             ok = TRUE;
             int cantIgual = 0, cantMenor = 0, cantMayor = 0;
             cantParticipantesSegunFecha(participantes,fecha,cantIgual,cantMenor,cantMayor);
-            printf(" Participantes nacidos en la fecha: %d",cantIgual);
-            printf(" Participantes nacidos antes de la fecha: %d",cantMenor);
-            printf(" Participantes nacidos despues de la fecha: %d",cantMayor);
+            printf("\n\n Participantes nacidos en la fecha indicada: %d",cantIgual);
+            printf("\n Participantes nacidos antes de la fecha indicada: %d",cantMenor);
+            printf("\n Participantes nacidos despues de la fecha indicada: %d",cantMayor);
         } else {
-            printf(" Ingrese una fecha valida. ");
+            printf("\n\n Ingrese una fecha valida. ");
         }
     }
 }
