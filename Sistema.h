@@ -15,7 +15,7 @@ void desplegarJugadoresRegistrados(Participantes participantes);
 // se debe pedir una cedula por pantalla
 // luego a partir de esa cedula, que se debe verificar que exista previamente se listan los datos del jugador incluyendo las partidas jugadas hasta el momento.
 // Las partidas deberán listarse ordenadas en forma ascendente por número de partida.
-void desplegarJugador(Participantes participantes);
+void desplegarJugador(Torneo torneo, Participantes participantes, Encuentros encuentros);
 
 // obtener el idDelUltimoEncuentroRegistrado (que va a ser el tope), utilizar ese ID + 1 para ingresar el siguiente encuentro
 // IMPORTANTE: solo puedo registrar un encuentro si el torneo no termino.

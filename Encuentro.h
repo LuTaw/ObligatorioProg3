@@ -10,6 +10,10 @@ typedef struct { int nroEncuentro;
                } Encuentro;
 
 // crea un encuentro
+// Precondicion:
+//      - Las cédulas de ambos participantes deben corresponder a jugadores registrados en el torneo.
+//      - Las cédulas de los jugadores deben ser distintas.
+//      - No debe existir ya un encuentro registrado entre esos dos jugadores.
 Encuentro crearEncuentro(int nuevoIdEncuentro, int cedulaParticipante1, int cedulaParticipante2);
 
 // despliega por pantalla los datos del encuentro
@@ -21,7 +25,7 @@ int darNroEncuentro(Encuentro encuentro);
 // obtener cedula participante 1
 int darCedulaParticipante1(Encuentro encuentro);
 
-// obtener cedula participante 1
+// obtener cedula participante 2
 int darCedulaParticipante2(Encuentro encuentro);
 
 // obtener cedula participante ganador

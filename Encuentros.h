@@ -21,8 +21,15 @@ boolean EsVacia(Encuentros encuentros);
 // Devuelve la cantidad de elementos de la secuencia.
 int Largo(Encuentros encuentros);
 
-// inserta el encuentro dentro del arreglo Encuentros
-// PreCondicion: el arreglo no esta lleno, es decir el torneo no ha terminado aun.
+// K-ésimo: Secuencia x N -> T
+// Devuelve el elemento que ocupa la posición K de la secuencia.
+// Precondición: El largo de la secuencia es mayor o igual a K.
+Encuentro Kesimo(Encuentros encuentros, int pos);
+
+//inserta el encuentro dentro del arreglo Encuentros
+// PreCondicion:
+//      - el arreglo no esta lleno, es decir el torneo no ha terminado aun.
+//      - el encuentro a insertar no pertenece a Encuentros
 void insertarEncuentroFinal(Encuentros &encuentros, Encuentro enc);
 
 // despliega por pantalla todos los encuentros
