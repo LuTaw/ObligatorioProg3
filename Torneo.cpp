@@ -1,5 +1,4 @@
 #include "Torneo.h"
-#include "Encuentros.h"
 
 // Crear:   Grafo
 // Crea un grafo vacío
