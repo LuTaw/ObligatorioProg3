@@ -142,6 +142,9 @@ void cantParticipantesSegunFechaEnLista(ListaParticipante lista, Fecha fecha, in
 // determina para una fecha dada, cantidad de participantes que nacieron antes, durante y luego de la misma
 void cantParticipantesSegunFecha(Participantes participantes, Fecha f1, int &cantIgual, int &cantMenor, int &cantMayor)
 {
+    cantIgual = 0;
+    cantMenor = 0;
+    cantMayor = 0;
     for (int i = 0; i < CantParticipantes; i++) {
         cantParticipantesSegunFechaEnLista(participantes[i], f1, cantIgual, cantMenor, cantMayor);
     }

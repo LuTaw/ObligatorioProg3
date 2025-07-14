@@ -158,7 +158,7 @@ void cantParticipantesSegunFecha(Participantes participantes)
         crearFecha(fecha);
         if(validarFecha(fecha)){
             ok = TRUE;
-            int cantIgual = 0, cantMenor = 0, cantMayor = 0;
+            int cantIgual, cantMenor, cantMayor;
             cantParticipantesSegunFecha(participantes,fecha,cantIgual,cantMenor,cantMayor);
             printf("\n\n Participantes nacidos en la fecha indicada: %d",cantIgual);
             printf("\n Participantes nacidos antes de la fecha indicada: %d",cantMenor);

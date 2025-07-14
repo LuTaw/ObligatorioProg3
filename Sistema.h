@@ -2,6 +2,7 @@
 #define SISTEMA_H_INCLUDED
 
 #include "Torneo.h"
+#include "Encuentros.h"
 
 // este metodo solo se puede ejecutar al comienzo del torneo.
 // los numeros de jugador iran siendo asignados por orden de registro, iniciando en 0.

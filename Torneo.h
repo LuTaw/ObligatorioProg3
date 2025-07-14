@@ -1,6 +1,6 @@
 #ifndef TORNEO_H_INCLUDED
 #define TORNEO_H_INCLUDED
-#include "Encuentros.h"
+#include "Participantes.h"
 
 typedef int Torneo[CantParticipantes][CantParticipantes];
 
